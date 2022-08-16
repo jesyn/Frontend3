@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stock en verdulería</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+</head>
+    <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    const productos = ["Manzana","Pera","Naranja", "Banana","Kiwi"];
+    const faltantes = ["Durazno", "Cereza", "Anana"];
+
+    const Stock =() =>{
+        const stock = productos.map((prod,index) =>
+        <li key ={index}> {prod} </li>)
+        return <ul> {stock} </ul>;
+    }
+
+    const Pedir=() => {
+        const pedir = faltantes.map((falt,index) =>
+        <li key ={index}> {falt} </li>)
+        return <ul> {pedir} </ul>;
+    }
+
+    ReactDOM.render(
+        <div>
+            <h1>Lista de Productos en stock:</h1>
+            <Stock/>
+            <h2>Productos en falta:</h2>
+            <Pedir/>
+        </div>,
+        document.getElementById("root")
+    )
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famosos</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+    
+    const header = ["HOME","ABOUT","CARRER","EDUCATION"]
+    const title = "Personal Information:";
+    const cardInfo = [
+        {
+        name: "Robert",
+        lastName: "Downey Jr",
+        age: 57,
+        nacionality: "USA"
+        }
+    ]
+    const cardMovies= [
+        "Pirates of the Caribbean",
+        "Johnny scissor hand",
+        "Transcendent"
+    ]
+
+    const cardEducation=[
+        "University of Arts",
+        "University of UCLA"
+    ]
+
+    const bio="Es un actor, actor de voz, productor y cantante estadounidense. Inició su carrera como actor a temprana edad apareciendo en varios filmes dirigidos por su padre, Robert Downey Sr., y en su infancia estudió actuación en varias academias de Nueva York. Se mudó con su padre a California, pero abandonó sus estudios para enfocarse completamente en su carrera."
+
+const Header = () => {
+    let headerList = header.map((item,index) =>
+        <a key={index}>{item}</a>
+    )
+    return <section>{headerList}</section>
+}
+
+const Card = () => {
+    let card = cardInfo.map((item,index) =>
+        <section key={index}>
+            <p>{"Nombre: "+ item.name}</p>
+            <p>{"Apellido: "+ item.lastName}</p>
+            <p>{"Edad: "+ item.age}</p>
+            <p>{"Nacionalidad: " + item.nacionality}</p>
+        </section>
+    
+    )
+    let card2 = cardMovies.map((item,index) => 
+        <li key={index}> {item} </li>
+    )
+    let card3 = cardEducation.map((item,index) =>
+        <li key={index}> {item} </li>
+    )
+
+    return(
+        <React.Fragment>
+            <img src="./img/Robert.jpg"></img>
+            <h3>Información personal </h3>
+            {card}
+            <h3>Películas</h3>
+            <ul>{card2}</ul>
+            <br></br>
+            <h3>Educación</h3>
+            <ul>{card3}</ul>
+            <h3>Biografía</h3>
+            <p> {bio} </p>
+        </React.Fragment>
+    )
+}
+
+ReactDOM.render(
+    <div>
+        <Header/>
+        <Card/>
+    </div>,
+    document.getElementById("root")
+)
+
+</script>
+</body>
+</html>

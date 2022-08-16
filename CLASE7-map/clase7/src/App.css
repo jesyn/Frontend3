@@ -1,0 +1,15 @@
+.titulo{
+  color: blue;
+}
+
+h1:first-child {
+  color: red;
+}
+
+h1:nth-child(3) {
+  color:aquamarine;
+}
+
+h1:last-child {
+  color: black;
+}
