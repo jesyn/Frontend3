@@ -1,0 +1,27 @@
+.container {
+    align-content: center;
+    color: red;
+    display: flex;
+    flex-grow: column wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    width: 80%;
+}
+
+.pelis {
+    align-content: center;
+    display: flex;
+    flex-grow: column wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem auto;
+    border: 2px, solid, green;
+    
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    color: blue;
+}

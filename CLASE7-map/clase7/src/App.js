@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 const saludos=["HOLA", "HOLA","HOLA", "MUNDO"]
