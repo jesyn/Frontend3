@@ -18,7 +18,7 @@ export default class App extends Component {
   // AREA DE TRABAJO -------------------------------------------
 
   update(item) {
-    this.setState(item);
+    this.setState({pokemon:item.pokemon});
     console.log(item);
   }
 
