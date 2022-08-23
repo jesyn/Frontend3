@@ -22,6 +22,10 @@ export class Aplicacion extends React.Component {
         console.log("componente actualizado")
     }
 
+    componentWillUnmount(){
+        console.log("componente desmontado")
+    }
+
     render(){
         return (
             <div>
