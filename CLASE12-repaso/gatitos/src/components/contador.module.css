@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+}
+
+.title{
+    color: coral;
+    font-size:larger;
+    font-weight: bold;
+    margin: 1rem;
+}
+
+h2 {
+    color: green
+}
+
+.btn {
+    background-color: #5aedbf;
+    border-radius: 10%;
+    color: #494d4b;
+    display: inline;
+    font-size: x-large;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    
+    
+}
+
+.btn-view {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.img {
+    border-radius: 50%;
+    margin-top: 2rem;
+    width: 30%;
+
+}
