@@ -1,18 +1,22 @@
 import styles from './contador.module.css'
 import Swal from "sweetalert2"
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function ContadorF() {
     const[contador, setContador] = useState(0);
     const[gato, setGato ] = useState("gatos");
     const[imagen, setImagen] = useState("");
 
-    const manejoContador = (e) => {
-        let contardorNuevo = parseInt(e.target.value)
-        setContador(contardorNuevo)
+
+    useEffect(() => {
+        manejoContador()
+    }, [contador])
+
+    const manejoContador = () => {
+        //let contardorNuevo = parseInt(e.target.value)
+        //setContador(e.target.value)
         console.log(contador)
-        if(contardorNuevo === 10){
-            
+        if(contador === 10){
             Swal.fire({
                 title: 'wow 10 gatitos!',
                 text: 'Llegaste al máximo de gatitos',
@@ -21,7 +25,7 @@ function ContadorF() {
                 imageHeight: 200,
                 imageAlt: 'gato sorprendido',
             })
-        }else if(contardorNuevo < 0){
+        }else if(contador < 0){
             Swal.fire({
                 title: 'Menos gatitos?',
                 text: 'No se pueden restar más gatitos',
@@ -32,7 +36,7 @@ function ContadorF() {
             })
         }
 
-        if(contardorNuevo === 1){
+        if(contador === 1){
             setGato("gato")
         }else{
             setGato("gatos")
@@ -54,7 +58,7 @@ function ContadorF() {
                     value={contador}
                     min="0"
                     max="10"
-                    onChange={manejoContador}>
+                    onChange={(e) => setContador(parseInt(e.target.value))}>
                 </input>
                 <h2>{gato}</h2>
                 <button className={styles.button} onClick={mostraImagen}>Mostrar Gato contador</button>

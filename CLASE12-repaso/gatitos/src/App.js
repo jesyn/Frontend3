@@ -1,10 +1,10 @@
-import Contador from './components/Contador.js'
-//import ContadorF from './components/ContadorF.js';
+//import Contador from './components/Contador.js'
+import ContadorF from './components/ContadorF.js';
 
 function App() {
   return (
     <div>
-      <Contador />
+      <ContadorF />
     </div>
   );
 }
