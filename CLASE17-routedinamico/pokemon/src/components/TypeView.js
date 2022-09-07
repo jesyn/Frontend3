@@ -3,19 +3,18 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import './pokedex.css'
 
+
 const TypeView = () => {
     const params = useParams()
-    const url = `https://pokeapi.co/api/v2/type/`
-    console.log("url de cada tipo"+ url)
-    
+    const url = `https://pokeapi.co/api/v2/type/${params.pokeType}`
 
-    const [pokeType, setPokeType] = useState({name:""})
+    const [pokeType, setPokeType] = useState({name:"", names:[{language:"", name:""}]})
 
     useEffect(() => {
         axios.get(url)
         .then(res => {
             console.log(res.data)
-            setPokeType(res.data.name)
+            setPokeType(res.data)
         })
     }, [url])
 
@@ -23,6 +22,9 @@ const TypeView = () => {
         <div className="select-poke">
             <h2>{params.pokeType}</h2>
             <h3>{pokeType.name}</h3>
+            <ul>
+                {pokeType.names.map((item, index) => <li key={index}>{item.name}</li>)}
+            </ul>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './pokedex.css'
 import { Link } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const Type = () => {
     const url = `https://pokeapi.co/api/v2/type/`
@@ -11,7 +12,6 @@ const Type = () => {
     useEffect(() => {
         axios.get(url)
         .then(res => {
-            console.log("url tipos" + res.data.results)
             setPokeType(res.data.results)
         })
     }, [url])
@@ -25,6 +25,7 @@ const Type = () => {
                 </Link>
                 )}
             </ul>
+            <Outlet/>
         </div>
     )
 }
