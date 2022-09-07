@@ -11,16 +11,6 @@ function App() {
   const [personajes, setPersonajes] = useState([])
 
   useEffect( () => {
-    console.log('1')
-      fetch(`${endpoint}${page}`)
-      .then( (response) => response.json())
-      .then( (data) => {
-          setPersonajes(data.results)
-          setLoading(false)
-      })
-  }, [])
-
-  useEffect( () => {
     fetch(`${endpoint}${page}`)
     .then( (response) => response.json())
     .then( (data) => {
@@ -40,20 +30,21 @@ function App() {
       }
   }
 
-
   if(loading){
       return (
         <h4>Obteniendo informacion....</h4>
       )
   }
- 
+
   return (
       <>
         <div className={styles.buttonbar}>
             <button onClick={handlePrevious}>Previo</button>
             <button onClick={handleNext}>Siguiente</button>
         </div>
-        {personajes.map( (personaje) => <Character key={personaje.id} name={personaje.name} image={personaje.image} />)}
+        <div className={styles.container}>
+          {personajes.map( (personaje) => <Character key={personaje.id} id={personaje.id} name={personaje.name} image={personaje.image} />)}
+        </div>
       </>
   );
 }

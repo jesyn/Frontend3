@@ -2,4 +2,43 @@
     display: flex;
     gap: 1rem;
     justify-content: center;
- }
+    background-color: crimson;
+}
+
+.container {
+    display: grid;
+    background-color: black;
+    column-gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    margin: 1rem auto;
+    width: 100%;
+    align-items: center;
+
+}
+
+.img {
+    border-radius: 50%;
+    width: 60%;
+}
+
+h2 {
+    color: white;
+    margin-left: 1rem;
+}
+
+.character{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    max-height: 500px;
+    
+}
+
+.pagination{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0.4rem;
+}

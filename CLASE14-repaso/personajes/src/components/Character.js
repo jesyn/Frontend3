@@ -1,7 +1,7 @@
 import { useEffect } from "react"
+import styles from '../styles/container.module.css'
 
-
-const Character = ({name, image}) =>{
+const Character = ({name, image, id}) =>{
 
   useEffect( () => {
       return  () =>{
@@ -10,10 +10,10 @@ const Character = ({name, image}) =>{
   }, [])
 
   return (
-    <>
-      <h2>{name}</h2>
-      <img src={image} alt={name}></img>
-    </>
+    <div className={styles.Character}>
+        <img className={styles.img} src={image} alt={name}></img>
+        <h2>{name}</h2>
+    </div>
   )
 
 }
