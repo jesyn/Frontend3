@@ -56,3 +56,7 @@ h1{
 .select-poke li {
     cursor: pointer;
 }
+
+h3 {
+    text-align: center;
+}

@@ -25,8 +25,6 @@ const Type = () => {
                     onClick={() => {
                         const text = tipo.url
                         const number = text.replace('https://pokeapi.co/api/v2/type/', '').replace('/','')
-                        console.log(number)
-                        
                         navigate(number);
                     }}
                 >
