@@ -10,19 +10,19 @@ function App() {
 
 
     return (
-      <div>
-        <Routes>
-            <Route path='/' element={<Home/>}>
-                <Route path='/pokemon' element={<PokeList/>}>
-                    <Route path=':pokeName' element={<Pokemon/>}/>
+        <div>
+            <Routes>
+                <Route path='/' element={<Home/>}>
+                    <Route path='/pokemon' element={<PokeList/>}>
+                        <Route path=':pokeName' element={<Pokemon/>}/>
+                    </Route>
+                    <Route path='/type' element={<Type/>}>
+                        <Route path=':number' element={<TypeView/>}/>
+                    </Route>
                 </Route>
-                <Route path='/type' element={<Type/>}>
-                    <Route path=':pokeType' element={<TypeView/>}/>
-                </Route>
-            </Route>
-            <Route path='*' element={<NotFound/>}/>
-        </Routes>
-      </div>
+                <Route path='*' element={<NotFound/>}/>
+            </Routes>
+        </div>
     );
 }
 

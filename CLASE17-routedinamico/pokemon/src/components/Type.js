@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './pokedex.css'
-import { Link } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 
 const Type = () => {
     const url = `https://pokeapi.co/api/v2/type/`
     const [pokeType, setPokeType] = useState([])
-    console.log("url tipos"+ url)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get(url)
@@ -19,15 +20,23 @@ const Type = () => {
     return (
         <div>
             <ul className="select-poke">
-                {pokeType.map(tipo => 
-                <Link key={tipo.name} to={`${tipo.name}`}>
-                    <li>{tipo.name}</li>
-                </Link>
-                )}
+            {pokeType.map((tipo) => (
+                <li key={tipo.name}
+                    onClick={() => {
+                        const text = tipo.url
+                        const number = text.replace('https://pokeapi.co/api/v2/type/', '').replace('/','')
+                        console.log(number)
+                        
+                        navigate(number);
+                    }}
+                >
+                    {tipo.name}
+                </li>
+            ))}
             </ul>
-            <Outlet/>
+            <Outlet />
         </div>
-    )
+    );
 }
 
 export default Type;

@@ -1,0 +1,20 @@
+.search__container > input {
+    width: 300px;
+    height: 30px;
+    border: #131921 1px solid;
+    margin-right: 3px;
+}
+
+.search__container > button {
+    height: 32px;
+    background-color: #F3A847;
+    border: none;
+    text-decoration: none;
+    width: 30px;
+    cursor: pointer;
+}
+
+.search__container > input:focus {
+    outline: orange 1px solid;
+    border: orange 1px solid;
+}

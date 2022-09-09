@@ -1,0 +1,33 @@
+.home__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 50px;
+}
+
+.home__product{
+    height: 400px;
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    background-color: white;
+    padding: 20px;
+}
+
+.home__product:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+
+#home__image{
+    height: 200px;
+    width: 250px;
+}
+
+#home__title{
+    font-size: 1.3rem;
+    text-transform: capitalize;
+}

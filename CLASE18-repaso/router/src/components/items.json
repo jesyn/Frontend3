@@ -1,0 +1,21 @@
+
+[
+    {
+        "name": "playstation",
+        "id":"1",
+        "price": 186000,
+        "description": "Experimenta una carga a velocidad sorprendente, una inmersión más profunda con soporte para respuesta hápitica, gatillos adaptativos y audio 3D, ademas de una generación nueva de juegos de PlayStation®5."
+    },
+    {
+        "name": "xbox",
+        "price": 170000,
+        "id":"2",
+        "description": "Con tu consola Xbox Series tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos."
+    },
+    {
+        "name": "sega",
+        "price": 5500,
+        "id":"3",
+        "description": "Con tu consola 16 Bit tendrás entretenimiento asegurado todos los días. Su tecnología fue creada para poner nuevos retos tanto a jugadores principiantes como expertos."
+    }
+]

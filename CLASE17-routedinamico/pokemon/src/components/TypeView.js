@@ -6,24 +6,23 @@ import './pokedex.css'
 
 const TypeView = () => {
     const params = useParams()
-    const url = `https://pokeapi.co/api/v2/type/${params.pokeType}`
-
-    const [pokeType, setPokeType] = useState({name:"", names:[{language:"", name:""}]})
+    const url = `https://pokeapi.co/api/v2/type/${params.number}`
+    console.log(params)
+    
+    const [pokeType, setPokeType] = useState([])
 
     useEffect(() => {
         axios.get(url)
-        .then(res => {
-            console.log(res.data)
-            setPokeType(res.data)
+            .then(res => {
+                console.log(res.data.pokemon)
+                setPokeType(res.data.pokemon)
         })
     }, [url])
 
     return (
         <div className="select-poke">
-            <h2>{params.pokeType}</h2>
-            <h3>{pokeType.name}</h3>
             <ul>
-                {pokeType.names.map((item, index) => <li key={index}>{item.name}</li>)}
+                {pokeType.map((poke, index) => <li key={index}>{poke.pokemon.name}</li>)}
             </ul>
         </div>
     )

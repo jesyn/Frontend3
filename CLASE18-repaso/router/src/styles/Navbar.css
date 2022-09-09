@@ -1,0 +1,21 @@
+.navbar__container {
+    position: relative;
+    padding: 10px;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+}
+
+
+.link {
+    background-color: none;
+    text-decoration: none;
+    width: 150px;  
+    color: black;
+}
+
+.navbar__container > button:hover {
+    border: 1px solid white;
+}

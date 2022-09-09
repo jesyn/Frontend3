@@ -1,0 +1,13 @@
+.login__container {
+    background-color: white;
+    width: 600px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labelStyle {
+    margin: '10px 0 5px 0';
+    font-size: '15px';
+}
