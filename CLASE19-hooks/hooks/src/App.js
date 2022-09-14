@@ -14,6 +14,7 @@ function App() {
         setLoading(false)
       }, 2000)
       e.target.nuevaFruta.value = ""
+      
     }
     
 
