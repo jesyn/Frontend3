@@ -18,18 +18,19 @@ const Pokemon = () => {
 
 
     useEffect(() => {
-        try{
-            const fetchData = async () => {
+        
+        const fetchData = async () => {
+            try{
                 const response = await axios.get(`${API_POKEMON}${id}`)
                 setPokemon(response.data)
                 console.log(response);
                 setLoading(false)
-            };
-            fetchData();
+            }
+            catch(error){
+                setErrorMessage(error)
+            }
         }
-        catch(error){
-            setErrorMessage(error)
-        }
+        fetchData();
         return () => {
             setPokemon({})
             setLoading(true)

@@ -1,0 +1,56 @@
+body {
+    background: #16a085;
+  }
+  
+  .App {
+    font-family: "Glory", sans-serif;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .image-card {
+    width: 250px;
+    min-width: 200px;
+    height: 400px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px lightgray;
+    border: none;
+    margin: 1rem;
+    border-radius: 14px;
+    padding: 1rem;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-img {
+    max-width: 150px;
+  }
+  
+  .card-img-title,
+  .loading-text {
+    max-width: 190px;
+    width: 90%;
+    text-align: center;
+    color: #fefb1e;
+    font-size: 1.5rem;
+    text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black,
+      1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  }
+  
+  .gallery-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .title-image {
+    max-width: 300px;
+  }
+  

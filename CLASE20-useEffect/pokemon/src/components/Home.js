@@ -11,19 +11,19 @@ const Home = () => {
 
 
     useEffect(() => {
-        try{
         const fetchData = async () => {
-            const response = await axios.get(API_POKEMONS)
-            setPokemons(response.data.results)
-            console.log("POKEMONS DATA");
-            setLoading(false)
-        };
+            try{
+                const response = await axios.get(API_POKEMONS)
+                setPokemons(response.data.results)
+                console.log("POKEMONS DATA");
+                setLoading(false)
+            }
+            catch (error){
+                setErrorMessage(error)
+                
+            }
+        }
         fetchData();
-        }
-        catch (error){
-            setErrorMessage(error)
-            
-        }
         return () => {
             setPokemons([])
             setLoading(true)
