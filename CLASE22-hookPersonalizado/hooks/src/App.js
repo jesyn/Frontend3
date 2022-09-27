@@ -1,18 +1,19 @@
-
+import CounterOne from './components/CounterOne';
+//import CounterTen from './components/CounterTen';
 import './App.css';
-import useToggle from './hooks/useToggle';
 
-function App() {
-  const [isTextChanged, setIsTextChanged] = useToggle();
+
+function App() {  
     
   return (
     <div className='container'>
-      <h1>using toggle</h1>
-      <h2>{isTextChanged ? 'one text' : 'two text'}</h2>
-      <button onClick={setIsTextChanged}>change text</button>
+      
+      <CounterOne />
+      
     </div>
   );
 
 }
 
 export default App;
+

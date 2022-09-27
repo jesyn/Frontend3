@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
+import useFetch from "./hooks/useFetch";
 
-// Aquí definimos cuantos elementos tendrá
-// nuestra galería. (Max: 10)
+
 const TOTAL_CHARACTERS = 5;
 
-// Este es el endpoint para obtener nuestros
-// personajes. Puedes ver la documentación
-// aquí: https://thesimpsonsquoteapi.glitch.me/
+
 const API_URL = `https://thesimpsonsquoteapi.glitch.me/quotes?count=${TOTAL_CHARACTERS}`;
 
-// Este componente es el encargado de mostrar cada uno de los
-// personajes.
 const Card = ({ url, name }) => (
   <div className="image-card">
     <div className="card-img-title">
@@ -21,27 +17,12 @@ const Card = ({ url, name }) => (
   </div>
 );
 
-// Aquí tenemos nuestra galería de imágenes.
+
 const ImageGallery = () => {
-  // En este estado guardamos el listado de personajes.
-  const [characters, setCharacters] = useState([]);
+  
+  const { isLoading, apiData: characters, errorMessage } = useFetch(`${API_URL}`);
+  console.log(characters)
 
-  // Tenemos que realizar el request correspondiente para obtener la
-  // información de la API y almacenarlo en el state. Para ello
-  // utilizaremos un useEffect.
-  useEffect(() => {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data)
-        setCharacters(data)
-      })
-  }, []);
-
-  // EL CODIGO VA AQUI...
-
-  // Esta función se encarga de renderizar cada uno de los
-  // personajes
   const renderCharacters = (characters) =>
     characters.map(({ character, image }, index) => (
       <Card url={image} name={character} key={`${character}-${index}`} />
